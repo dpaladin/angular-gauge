@@ -1,7 +1,7 @@
 {
   "name": "angular-gauge",
   "version": "4.0.0",
-  "description": "A tiny angular 10.0+ wrapper for https://github.com/naikus/svg-gauge",
+  "description": "A tiny angular 10.0+ wrapper for https://github.com/dpaladin/svg-gauge",
   "scripts": {
     "start": "concurrently --raw \"webpack-dev-server --open\" \"npm run test:watch\"",
     "build:demo": "webpack -p",
@@ -39,7 +39,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mattlewis92/angular-gauge.git"
+    "url": "git+https://github.com/dpaladin/angular-gauge.git"
   },
   "keywords": [
     "angular2",
@@ -51,10 +51,6 @@
   ],
   "author": "Matt Lewis",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mattlewis92/angular-gauge/issues"
-  },
-  "homepage": "https://github.com/mattlewis92/angular-gauge#readme",
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1001.4",
     "@angular-devkit/build-ng-packagr": "^0.1001.4",
@@ -120,7 +116,7 @@
     "@angular/core": ">=10.0.0"
   },
   "dependencies": {
-    "svg-gauge": "^1.0.6"
+    "svg-gauge": "dpaladin/svg-gauge"
   },
   "config": {
     "commitizen": {
