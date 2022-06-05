@@ -5,7 +5,7 @@
   "scripts": {
     "start": "concurrently --raw \"webpack-dev-server --open\" \"npm run test:watch\"",
     "build:demo": "webpack -p",
-    "build:dist": "ng-packagr -p package.json",
+    "build": "ng-packagr -p ng-package.json",
     "build:clean": "del-cli dist",
     "test": "karma start --single-run && npm run build:dist && npm run build:clean",
     "test:watch": "karma start --auto-watch",
@@ -19,23 +19,13 @@
     "release": "npm run release:git && npm run release:npm",
     "postrelease": "npm run build:clean && npm run gh-pages",
     "codecov": "cat coverage/lcov.info | codecov",
-    "prettier": "prettier --write"
+    "prettier": "prettier --write",
+    "prepare": "npm run build"
   },
   "lint-staged": {
     "**/*.{ts,html}": [
       "npm run prettier"
     ]
-  },
-  "ngPackage": {
-    "whitelistedNonPeerDependencies": [
-      "svg-gauge"
-    ],
-    "lib": {
-      "entryFile": "src/index.ts",
-      "umdModuleIds": {
-        "svg-gauge": "Gauge"
-      }
-    }
   },
   "repository": {
     "type": "git",

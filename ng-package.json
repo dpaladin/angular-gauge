@@ -1,0 +1,11 @@
+{
+    "whitelistedNonPeerDependencies": [
+        "svg-gauge"
+    ],
+    "lib": {
+        "entryFile": "src/index.ts",
+        "umdModuleIds": {
+            "svg-gauge": "Gauge"
+        }
+    }
+}
