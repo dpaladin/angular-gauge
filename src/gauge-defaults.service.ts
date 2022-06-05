@@ -73,6 +73,12 @@ export interface GaugeOptions {
    * Animation duration in seconds
    */
   animationDuration?: number;
+  nimated?: boolean;
+
+  /**
+   * Extra elements
+   */
+  extra?: ExtraElement[];
 }
 
 export class GaugeDefaults implements GaugeOptions {
@@ -150,4 +156,26 @@ export class GaugeDefaults implements GaugeOptions {
    * Animation duration in seconds
    */
   animationDuration: number;
+
+  /**
+   * Extra elements
+   */
+   extra?: ExtraElement[] = [];
+}
+
+export interface ExtraElement {
+  /**
+   * The type of element
+   */
+  type: string;
+
+  /**
+   * The options of the element
+   */
+  options?: any;
+
+  /**
+   * Function that returns a string label that will be rendered in the element. This function will be passed the current value
+   */
+  value?: (v: number) => any;
 }

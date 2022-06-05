@@ -9,7 +9,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import Gauge from 'svg-gauge';
-import { GaugeDefaults, GaugeOptions } from './gauge-defaults.service';
+import { ExtraElement, GaugeDefaults, GaugeOptions } from './gauge-defaults.service';
 
 @Component({
   selector: 'mwl-gauge',
@@ -92,6 +92,11 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
   @Input() animationDuration: number;
 
   /**
+   * Extra elements
+   */
+  @Input() extra: ExtraElement[];
+
+  /**
    * Called when the gauge is created
    */
   @Output() gaugeCreated: EventEmitter<{ gauge: any }> = new EventEmitter();
@@ -115,6 +120,7 @@ export class GaugeComponent implements AfterViewInit, OnChanges, GaugeOptions {
       valueClass: this.valueClass,
       value: this.value,
       color: this.color,
+      extra: this.extra
     };
 
     Object.keys(this.defaults).forEach((optionKey) => {

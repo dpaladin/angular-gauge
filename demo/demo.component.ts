@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
+import { ExtraElement } from '../src/gauge-defaults.service';
 
 @Component({
   selector: 'mwl-demo-app',
@@ -24,6 +25,7 @@ import { Component, ViewEncapsulation, OnInit, OnDestroy } from '@angular/core';
         [value]="gaugeValues[2]"
         [animated]="true"
         [animationDuration]="2"
+        [extra]="extraElements"
       >
       </mwl-gauge>
 
@@ -224,6 +226,25 @@ export class DemoComponent implements OnInit, OnDestroy {
     7: 50,
   };
 
+  extraElements: ExtraElement[] = [
+    {
+      type: 'text',
+      options: {
+        x: 50,
+        y: 30,
+        fill: "#0f0",
+        "font-size": "100%",
+        "font-family": "sans-serif",
+        "font-weight": "normal",
+        "text-anchor": "middle",
+        "alignment-baseline": "middle",
+        "dominant-baseline": "central"
+      },
+      value: (v: number) => {
+        return (v + 10).toFixed(2);
+      }
+    }
+  ]
   interval: any;
 
   constructor() {
