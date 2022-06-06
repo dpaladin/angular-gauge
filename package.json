@@ -22,6 +22,7 @@
     "prettier": "prettier --write",
     "prepare": "npm run build"
   },
+  "files": ["dist/**"],
   "lint-staged": {
     "**/*.{ts,html}": [
       "npm run prettier"
