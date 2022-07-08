@@ -114,7 +114,7 @@
     "@angular/core": ">=10.0.0"
   },
   "dependencies": {
-    "svg-gauge": "dpaladin/svg-gauge"
+    "svg-gauge": "github:dpaladin/svg-gauge"
   },
   "config": {
     "commitizen": {
